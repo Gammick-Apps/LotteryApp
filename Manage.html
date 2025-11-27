@@ -33,6 +33,8 @@
                             { headerName: "", field: "id", maxWidth: 50 },
                             { headerName: "שם", field: "name", editable: true },
                             { headerName: "תיאור", field: "description", editable: true },
+                            { headerName: "טווח מינימום", field: "min", editable: true },
+                            { headerName: "טווח מקסימום", field: "max", editable: true },
                             { headerName: "מספר זוכה", field: "lotteryNumber"},
                             {
                                 cellRendererSelector: function (params) {
@@ -109,7 +111,9 @@
                 "id": id,
                 "name": "",
                 "description": "",
-                "lotteryNumber": null
+                "lotteryNumber": null,
+                "min": null,
+                "max": null
             })
             fileName = 'manageConfig'
             window.expose.SendExcel("sendWriteExcel", [fileName, manageConfig]);

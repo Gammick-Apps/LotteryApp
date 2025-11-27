@@ -50,8 +50,12 @@
         // Define a function to generate a random lottery number with 4 digits between min and max
         function generateLotteryNumber() {
             var selectedGift = gifts.find(x => x.id == selectedIndex)
-            var min = parseInt(systemConfig.min);
-            var max = parseInt(systemConfig.max);
+            var min = parseInt(selectedGift.min);
+            var max = parseInt(selectedGift.max);
+            if (isNaN(min) || isNaN(max)) {
+                alert('נא להגדיר טווח (min ו-max) עבור המתנה זו בממשק הניהול');
+                return;
+            }
             var canGenerateAgain = false;
             var lotteryNumber;
 
